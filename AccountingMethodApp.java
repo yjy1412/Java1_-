@@ -35,6 +35,7 @@ public class AccountingMethodApp {
 			System.out.println("Dividend1: " + income * dividendRates[i]);
 			i = i + 1;
 		}
+		System.out.println("For git pull test");
 	}
 
 	public static double getTotal(double vat) {
