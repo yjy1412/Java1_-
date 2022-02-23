@@ -34,7 +34,7 @@ public class AccountingMethodApp {
 		while (i < dividendRates.length) {
 			System.out.println("Dividend1: " + income * dividendRates[i]);
 			i = i + 1;
-		}
+		};
 	}
 
 	public static double getTotal(double vat) {
