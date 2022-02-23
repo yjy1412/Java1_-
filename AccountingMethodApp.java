@@ -36,6 +36,7 @@ public class AccountingMethodApp {
 			i = i + 1;
 		}
 		System.out.println("For git pull test");
+		System.out.println("Ok then push");
 	}
 
 	public static double getTotal(double vat) {
