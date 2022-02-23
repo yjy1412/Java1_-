@@ -1,50 +1,31 @@
-
-public class AccountingMethodApp {
-	
+class Accounting {
 	public static double valueOfSupply;
 	public static double vatRate;
 	public static double expenseRate;
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		valueOfSupply = 10000;
-		vatRate = 0.1;
-		expenseRate = 0.3;
-		double vat = getVat();
-		double expense = getExpense();
-		double income = getIncome(expense);
-		double total = getTotal(vat);
-		
-		double[] dividendRates = new double[3];
-		dividendRates[0] = 0.5;
-		dividendRates[1] = 0.3;
-		dividendRates[2] = 0.2;
-		
-		
+	public static double[] dividendRates;
+	
+	public static void print() {
 		System.out.println("SupplyPrice: " + valueOfSupply);
 		System.out.println("vatRate: " + vatRate);
 		System.out.println("expensRate: " + expenseRate);
-		System.out.println("vat: " + vat);
-		System.out.println("expense: " + expense);
-		System.out.println("income: " + income);
-		System.out.println("total : " + total);
-		
+		System.out.println("vat: " + getVat());
+		System.out.println("expense: " + getExpense());
+		System.out.println("income: " + getIncome());
+		System.out.println("total : " + getTotal());
+	
 		int i = 0;
 		while (i < dividendRates.length) {
-			System.out.println("Dividend1: " + income * dividendRates[i]);
+			System.out.println("Dividend1: " + getIncome() * dividendRates[i]);
 			i = i + 1;
 		}
-		System.out.println("For git pull test");
-		System.out.println("Ok then push");
 	}
 
-	public static double getTotal(double vat) {
-		return valueOfSupply + vat;
+	public static double getTotal() {
+		return valueOfSupply + getVat();
 	}
 
-	public static double getIncome(double expense) {
-		return valueOfSupply - expense;
+	public static double getIncome() {
+		return valueOfSupply - getExpense();
 	}
 
 	public static double getExpense() {
@@ -53,6 +34,21 @@ public class AccountingMethodApp {
 
 	public static double getVat() {
 		return valueOfSupply * vatRate;
+	}
+	
+}
+
+public class AccountingMethodApp {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Accounting.valueOfSupply = 10000;
+		Accounting.vatRate = 0.1;
+		Accounting.expenseRate = 0.3;
+		Accounting.dividendRates = new double[] {0.5, 0.3, 0.1};
+		Accounting.print();
+		
 	}
 
 }
